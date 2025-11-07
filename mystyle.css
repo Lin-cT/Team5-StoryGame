@@ -1,0 +1,28 @@
+body {font-family: "Work Sans", Arial, Helvetica, sans-serif;}
+.pg-bgcolor {
+    background-color:cadetblue;
+}
+.txt-capsule {
+    background-color:blueviolet;   /* blueviolet background */
+    color: black;                /* Black text */
+    padding: 15px 30px;          /* Vertical and horizontal padding */
+    border-radius: 50px;         /* Makes it capsule-shaped */
+    display: inline-block;       /* Fits tightly around the text */
+    font-size: 14px;
+    text-align: center;
+  }
+  .btn-capsule {
+    background-color:lawngreen;   /* lawngreen background */
+    color: black;                /* Black text */
+    padding: 5px 25px;          /* Vertical and horizontal padding */
+    border-radius: 25px;         /* Makes it capsule-shaped */
+    display: inline-block;       /* Fits tightly around the text */
+    font-size: 14px;
+    text-align: center;
+  }
+  .header-box {
+    background-color: black;
+    padding:15px;
+    color: white;
+    font-size: 14px;
+  }
