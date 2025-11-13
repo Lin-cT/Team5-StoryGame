@@ -1,0 +1,78 @@
+.header {
+    background-color: #121244;
+    font-size: 18px;
+    position: sticky;
+    color: white;
+    width: 100vw;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    place-items:center;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.header-login { 
+    font-size: 15px;
+    width: 100px;
+    height:30px;
+    background-color: black; 
+    color: white; 
+    border-radius: 10px;
+}
+.image {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    height: 500px;  
+  }
+/* ribbon banner */
+.ribbon{
+    position: absolute;
+    left: 50%;
+    top: 60%;                          /* adjust vertical spot */
+    transform: translate(-50%, -50%) rotate(-6deg);
+    width: 300px;
+    text-align: center;
+    background: #E2DADA;
+    border: 3.5px solid black;
+    padding: 40px 100px 40px 100px;
+  }
+  
+/* ribbon text */
+.ribbon span {
+    display: block;
+    font-weight: 800;
+    font-size: clamp(22px, 3.2vw, 48px);
+    color: #1b1b1b;
+    letter-spacing: 0.5px;
+}
+  
+.next-button { 
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+
+    display: inline-flex;           
+    align-items: center;
+    justify-content: center;
+
+    min-width: 100px;              
+    padding: 18px 50px;
+    box-sizing: border-box;
+
+    font-size: 15px;
+    background: #7EB256;     
+    color: #386E41;          
+    border: 3px solid #386E41;
+    border-radius: 9999px;   
+    text-align: center;
+}
+.next-button:hover {
+    filter: brightness(0.90);
+  }
+body {
+    margin: 0;
+    background-color: #80B4D5;
+}

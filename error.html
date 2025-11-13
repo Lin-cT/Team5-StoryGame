@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Divide the Day</title>
+        <link rel="stylesheet" href="error.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-title"> Divide the Day </div>
+            <div class="header-spacer"> </div>
+            <button class="header-login"> Log in </button>
+        </div>
+        <div class="next">
+            <a class="next-button" href="problem.html">Next</a>
+            <script>
+                var next = window.sessionStorage.getItem('nextAct');
+              
+                var link = document.getElementById('next-button');
+                link.href = 'problem.html?next=' + encodeURIComponent(next || '');
+              </script>
+        </div>
+        <div class="image">
+            <img src="public/wrong.png" width="300">
+        </div>
+        <div class="ribbon" aria-label="Try Again">
+            <span>Try Again!</span>
+        </div>
+    </body>
+
+</html>
