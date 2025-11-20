@@ -1,0 +1,49 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HUNTRIX PAGE 1</title>
+        <link rel="stylesheet" type="text/css" href="problem_styles.css">
+        <link rel="icon" href="" type="image/x-icon" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body class="pg-bgcolor">
+        <div class="header-box">
+            <table style="color:white; width:100%">
+                <tr>
+                    <td style="padding-left:20px;">Divide the Day</td> <!--padding moves it to the left slightly-->
+                    <td style="text-align:right;"> <!--placement of log in box-->
+                        <button id="btnlogin" class="logIn-button">Log In</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="bubble-container">
+            <div class="bubble-row row-left" style="width:40%;"> <!--width % makes sure screen doesn't cut off, margin moves the bubble to the left-->
+                <div class="bubble bubble-left" id="problem">
+                <b>What is [PROBLEM 2]</b>
+                </div>
+                <img src="Images/Derpy_one.png" alt="Derpy" class="icon" style="margin-left:-15%">
+            </div>
+
+       <div class="bubble-row row-right" style="width:40%;">
+                <img src="Images/Sussy_one.png" alt="Sussy" class="icon img-hor" style="margin-right:-15%; z-index:101;">
+                <div class="bubble bubble-right bubble-second" id="answer">
+                <b>Answer: </b>
+                <form id="ans-form">
+                    <input id="ans-input" type="text" class="answer-box" placeholder="e.g., 3/8" />
+                  </form>
+                <div id="feedback"></div>
+              </div>
+            </div>
+        </div>
+        
+        <div style="padding-right:38px; text-align:right;">
+            <button id="btnnext" class="next-capsule">NEXT</button>
+        </div>
+    </body>
+</html>
