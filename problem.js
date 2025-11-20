@@ -1,8 +1,8 @@
 var problem_element = document.getElementById('problem');
-var input     = document.getElementById('ans-input');
-var next_btn   = document.getElementById('next-btn');
+var input = document.getElementById('ans-input');
+var next_btn = document.getElementById('next-btn');
 
-var params  = new URLSearchParams(window.location.search);
+var params = new URLSearchParams(window.location.search);
 var nextUrl = window.sessionStorage.getItem('nextAct');
 
 function randInt(min, max) {
@@ -10,7 +10,8 @@ function randInt(min, max) {
 }
 
 function gcd(a, b) {
-  a = Math.abs(a); b = Math.abs(b);
+  a = Math.abs(a); 
+  b = Math.abs(b);
   while (b !== 0) {
     var t = b;
     b = a % b;
@@ -21,13 +22,17 @@ function gcd(a, b) {
 
 function simplify(n, d) {
   var g = gcd(n, d);
-  return { n: n / g, d: d / g };
+  return { 
+    n: n / g, 
+    d: d / g };
 }
 
 function properFraction() {
   var den = randInt(2, 10);
   var num = randInt(1, den - 1); 
-  return { n: num, d: den };
+  return { 
+    n: num, 
+    d: den };
 }
 
 var f1 = properFraction();
@@ -68,9 +73,15 @@ next_btn.addEventListener('click', function (e) {
   var user = simplify(p, q);
 
   if (user.n === product.n && user.d === product.d) {
-    if (!nextUrl) { goError(); return; }
+    if (!nextUrl) 
+      { 
+        goError(); 
+        return; 
+      }
     window.location.href = nextUrl;
-  } else {
+  } 
+  else 
+  {
     goError();
   }
   });
