@@ -55,5 +55,11 @@ body {
     width:43%; /*percent version will make button resize when screen size changes*/
     border-radius: 10px;
   }
+  .vertical-image{
+    display: block;
+    margin: 0 auto; 
+    width:30%; /*percent version will make button resize when screen size changes*/
+    border-radius: 10px;
+  }
 
 

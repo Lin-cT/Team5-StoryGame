@@ -57,7 +57,7 @@ body {
     margin-right: 30%; /*moves top bubble to the left when increased*/
 } 
 .row-right { 
-    margin-left: 30%;  /*moves bottom bubble to the right when increased*/
+    margin-left: 25%;  /*moves bottom bubble to the right when increased*/
 }
 .bubble {
     background-color:rgb(207, 71, 141);
@@ -154,7 +154,10 @@ body {
     box-shadow: 6px 6px 3px rgba(60, 1, 32, 0.247);
     }
 .row-right { 
-    margin-left: 15%; 
+    margin-left: 8%; 
+}
+.row-left { 
+    margin-left: -5%; 
 }
 } 
 
