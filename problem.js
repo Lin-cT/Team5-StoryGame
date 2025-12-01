@@ -3,7 +3,7 @@ var input = document.getElementById('ans-input');
 var next_btn = document.getElementById('next-btn');
 
 var params = new URLSearchParams(window.location.search);
-var nextUrl = window.sessionStorage.getItem('nextAct');
+var nextUrl = params.get('next') || window.sessionStorage.getItem('nextAct');
 
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
