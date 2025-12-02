@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const parts = raw.split("/"); //checks if user put answer in "n/d" format
             if (parts.length !== 2) { //???
+                adjustPoints(-1)
                 window.location.href = `Incorrect.html?next=${nextScene}`;
                 return;
             }
@@ -91,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const p = Number(parts[0]); //if any of the numbers are not a number, incorrect
             const q = Number(parts[1]);
             if (!Number.isInteger(p) || !Number.isInteger(q) || q === 0) {
+                adjustPoints(-1)
                 window.location.href = `Incorrect.html?next=${nextScene}`;
                 return;
             }
@@ -104,12 +106,22 @@ document.addEventListener("DOMContentLoaded", () => {
             //((correct.n === correct.d) && (user === 1))||
             
             if (((correct.n === correct.d) && (inputBox===1))) { 
+                adjustPoints(3)
                 window.location.href = nextScene;
             } else if (user.n === correct.n && user.d === correct.d) { //if numer and denom are both right
+                adjustPoints(3)
                 window.location.href = nextScene;
             }else {
+                adjustPoints(-1)
                 window.location.href = `Incorrect.html?next=${nextScene}`;
             }
         }
     });
+
+    function adjustPoints(number) {
+        let current = parseInt(localStorage.getItem("huntrixPoints") || "0", 10);
+        current += number;
+        localStorage.setItem("huntrixPoints", current.toString());
+    }
+
 });
