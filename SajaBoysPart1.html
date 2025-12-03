@@ -16,47 +16,55 @@
   </head>
 
   <body>
+    <div class="header">
+      <div class="header-title">Divide the Day</div>
+      <div class="header-spacer"></div>
+      <button class="header-login">Log in</button>
+    </div>
+
     <div id="prompt-container">
       <p id="prompt"></p>
     </div>
 
-<div class="bubble-container" id = "bubble-wrapper">
-            <div class="bubble-row row-left">
-              <img src="images/Derpy_one.png" alt="Derpy" class="icon">
-              <div class="bubble bubble-left" id="problem">Problem:</div>
-            </div>
-          
-            <div class="bubble-row row-right">
-              <div class="bubble bubble-right" id="answer">
-                Answer:
-                <form id="ans-form">
-                    <input id="user-answer-input" type="text" placeholder="e.g., 3/8" />
-                  </form>
-              </div>
-              <img src="images/Sussy_one.png" alt="Sussy" class="icon">
-            </div>
-          </div>
+    <div class="bubble-container" id="bubble-wrapper">
+      <div class="bubble-row row-left">
+        <img src="images/Derpy_one.png" alt="Derpy" class="icon" />
+        <div class="bubble bubble-left" id="problem">Problem:</div>
+      </div>
+
+      <div class="bubble-row row-right">
+        <div class="bubble bubble-right" id="answer">
+          Answer:
+          <form id="ans-form">
+            <input id="user-answer-input" type="text" placeholder="e.g., 3/8" />
+          </form>
+        </div>
+        <img src="images/Sussy_one.png" alt="Sussy" class="icon" />
+      </div>
+    </div>
 
     <div id="start-container">
       <button id="start-button">Start</button>
     </div>
-
+    <div class="icon" id="check-container">
+      <img src="images/check.png" id="check-image" width="200" />
+    </div>
     <img
       id="saja-boys-img"
       src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
     />
 
-    <div id = "error-container">
+    <div id="error-container">
       <div id="error-image">
-            <img src="images/wrong.png" width="300">
-        </div>
-        <div id="ribbon" aria-label="Try Again">
-            <span id = "ribbon-span">Try Again!</span>
-        </div>
+        <img src="images/wrong.png" width="300" />
+      </div>
+      <div id="ribbon" aria-label="Try Again">
+        <span id="ribbon-span">Try Again!</span>
+      </div>
     </div>
 
-    <div id = "feedback-container">
-      <p id = "feedback"></p>
+    <div id="feedback-container">
+      <p id="feedback"></p>
     </div>
 
     <div id="next-container">
@@ -66,10 +74,5 @@
     <div id="submit-container">
       <button id="submit-button">Submit</button>
     </div>
-
   </body>
-
-  <footer>
-    <p>Made by: WIC &hearts;</p>
-  </footer>
 </html>

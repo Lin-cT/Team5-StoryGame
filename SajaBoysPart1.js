@@ -21,6 +21,8 @@ const bubbleRowRight = document.querySelector('.row-right');
 const problem = document.getElementById('problem');
 const userAnswerInput = document.getElementById('user-answer-input');
 
+const checkContainer = document.getElementById('check-container')
+const checkImage = document.getElementById('check-image')
 const errorContainer = document.getElementById('error-container');
 const errorImage = document.getElementById('error-image');
 const ribbon = document.getElementById('ribbon');
@@ -85,7 +87,7 @@ function showQuestionIntro() {
   sajaBoysImg.style.display = "block";
 
   prompt.textContent = questions[question];
-  sajaBoysImg = questionImages[question];
+  sajaBoysImg.src = questionImages[question];
 }
 
 function handleNext() {
@@ -145,7 +147,8 @@ function checkAnswer(num1, den1, num2, den2) {
 function showFeedback() {
   bubbleWrapper.style.display = "none";
   submitContainer.style.display = "none";
-
+  checkContainer.style.display = "block";
+  checkImage.style.display = "block";
   feedbackContainer.style.display = "flex";
   nextContainer.style.display = "flex";
   sajaBoysImg.style.display = "flex";
@@ -184,6 +187,7 @@ function continueOrAdvanceQuestion() {
     partNum = 0;
 
     if (question >= 3) {
+      window.location.href = 'main/SajaBoys_Act_5_1.html';
       console.log("Go to Alyssa's section!")
     }
 
