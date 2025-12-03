@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //((correct.n === correct.d) && (user === 1))||
             
             if (((correct.n === correct.d) && (inputBox===1))) { 
-                adjustPoints(3)
+                adjustPoints(3) // This adds 3 points for correct answer (We can see if they got more Saja Boy or Huntrix right)
                 window.location.href = nextScene;
             } else if (user.n === correct.n && user.d === correct.d) { //if numer and denom are both right
                 adjustPoints(3)
