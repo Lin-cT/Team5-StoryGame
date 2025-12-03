@@ -1,7 +1,3 @@
-const startContainer = document.getElementById("start-container");
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", startGame);
-
 const nextContainer = document.getElementById("next-container");
 const nextButton = document.getElementById("next-button");
 
@@ -12,21 +8,21 @@ const promptContainer = document.getElementById("prompt-container");
 const prompt = document.getElementById("prompt");
 
 const feedbackContainer = document.getElementById("feedback-container");
-const feedback = document.getElementById('feedback');
+const feedback = document.getElementById("feedback");
 
-const bubbleWrapper = document.getElementById('bubble-wrapper');
-const bubbleRowLeft = document.querySelector('.row-left');
-const bubbleRowRight = document.querySelector('.row-right');
+const bubbleWrapper = document.getElementById("bubble-wrapper");
+const bubbleRowLeft = document.querySelector(".row-left");
+const bubbleRowRight = document.querySelector(".row-right");
 
-const problem = document.getElementById('problem');
-const userAnswerInput = document.getElementById('user-answer-input');
+const problem = document.getElementById("problem");
+const userAnswerInput = document.getElementById("user-answer-input");
 
-const checkContainer = document.getElementById('check-container')
-const checkImage = document.getElementById('check-image')
-const errorContainer = document.getElementById('error-container');
-const errorImage = document.getElementById('error-image');
-const ribbon = document.getElementById('ribbon');
-const ribbonSpan = document.getElementById('ribbon-span');
+const checkContainer = document.getElementById("check-container");
+const checkImage = document.getElementById("check-image");
+const errorContainer = document.getElementById("error-container");
+const errorImage = document.getElementById("error-image");
+const ribbon = document.getElementById("ribbon");
+const ribbonSpan = document.getElementById("ribbon-span");
 
 const sajaBoysImg = document.getElementById("saja-boys-img");
 
@@ -35,7 +31,7 @@ let partNum = 0;
 
 let num1, den1, num2, den2;
 
-startButton.addEventListener("click", startGame);
+window.onload = startGame;
 nextButton.addEventListener("click", handleNext);
 submitButton.addEventListener("click", handleSubmit);
 
@@ -49,31 +45,48 @@ question1Parts = [
   "Yay! Jinu finished exfloiating his skin! Continue answering problems to complete Jinu's skincare routine.",
   "Halfway done! Jinu used toner! Continue answering problems to complete Jinu's skincare routine.",
   "Almost done! Jinu used expensive acne treatment! Continue answering problems to continue Jinu's skincare routine.",
-  "Finished! Jinu used moisturizer and finished his skincare routine. He's now ready for the day!"
+  "Finished! Jinu used moisturizer and finished his skincare routine. He's now ready for the day!",
 ];
 question2Parts = [
   "Mystery Saja has heated the pan up and added oil. Continue answering problems to help Mystery Saja finish making scrambeled eggs!",
   "Mystery Saja cracked the egg! Continue answering problems to help Mystery Saja finish making scrambeled eggs!",
   "Mystery Saja added salt onto the eggs! Continue answering problems to help Mystery Saja finish making scrambeled eggs!",
   "The egg is almost done! Mystery Saja has flipped the egg! Continue answering problems to help Mystery Saja finish making scrambeled eggs!",
-  "Hurray! The egg is done. Mystery Saja plated the scrambled eggs so everyone can eat!"
+  "Hurray! The egg is done. Mystery Saja plated the scrambled eggs so everyone can eat!",
 ];
 question3Parts = [
-  "Abby has finished practicing his dance moves! Continue answering problems to help Abby perfect his dance and ab reveal.", 
+  "Abby has finished practicing his dance moves! Continue answering problems to help Abby perfect his dance and ab reveal.",
   "Abby nailed lifting his shirt to expose his abs. Conitnue answering problems to help Abby finish his ab reveal routine!",
-  "Abby ripped off his shirt! He has now perfected the perfect ab reveal routine!"
+  "Abby ripped off his shirt! He has now perfected the perfect ab reveal routine!",
 ];
 
-questionImages = ["problem_images/question1.jpg", "problem_images/question2.jpg", "problem_images/question3.jpg"];
-question1Images = ["problem_images/question1_1.jpg", "problem_images/question1_2.jpg", "problem_images/question1_3.jpg", "problem_images/question1_4.jpg", "problem_images/question1_5.jpg"]
-question2Images = ["problem_images/question2_1.jpg", "problem_images/question2_2.jpg", "problem_images/question2_3.jpg", "problem_images/question2_4.jpg", "problem_images/question2_5.jpg"]
-question3Images = ["problem_images/question3_1.jpg", "problem_images/question3_2.jpg", "problem_images/question3_3.jpg"];
+questionImages = [
+  "problem_images/question1.jpg",
+  "problem_images/question2.jpg",
+  "problem_images/question3.jpg",
+];
+question1Images = [
+  "problem_images/question1_1.jpg",
+  "problem_images/question1_2.jpg",
+  "problem_images/question1_3.jpg",
+  "problem_images/question1_4.jpg",
+  "problem_images/question1_5.jpg",
+];
+question2Images = [
+  "problem_images/question2_1.jpg",
+  "problem_images/question2_2.jpg",
+  "problem_images/question2_3.jpg",
+  "problem_images/question2_4.jpg",
+  "problem_images/question2_5.jpg",
+];
+question3Images = [
+  "problem_images/question3_1.jpg",
+  "problem_images/question3_2.jpg",
+  "problem_images/question3_3.jpg",
+];
 
 function startGame() {
   console.log("Saja Boys!");
-  startContainer.style.display = "none";
-  startButton.style.display = "none";
-
   showQuestionIntro();
 }
 
@@ -91,7 +104,10 @@ function showQuestionIntro() {
 }
 
 function handleNext() {
-  if (promptContainer.style.display === "flex" || errorContainer.style.display === "block") {
+  if (
+    promptContainer.style.display === "flex" ||
+    errorContainer.style.display === "block"
+  ) {
     createProblem();
     return;
   }
@@ -112,18 +128,19 @@ function createProblem() {
   feedbackContainer.style.display = "none";
   sajaBoysImg.style.display = "none";
   nextContainer.style.display = "none";
-  errorContainer.style.display = 'none';
-  errorImage.style.display = 'none';
-  ribbon.style.display = 'none';
-  ribbonSpan.style.display = 'none';
-  nextContainer.style.display = 'none';
+  errorContainer.style.display = "none";
+  errorImage.style.display = "none";
+  ribbon.style.display = "none";
+  ribbonSpan.style.display = "none";
+  nextContainer.style.display = "none";
 
   bubbleWrapper.style.display = "flex";
   submitContainer.style.display = "flex";
 
   userAnswerInput.value = "";
   problem.innerHTML = `Problem: ${num1}/${den1} &times ${num2}/${den2}`;
-  problem.innerHTML = prettyFunction(num1, den1) + " &times " + prettyFunction(num2, den2)
+  problem.innerHTML =
+    prettyFunction(num1, den1) + " &times " + prettyFunction(num2, den2);
 }
 
 function handleSubmit() {
@@ -135,7 +152,7 @@ function checkAnswer(num1, den1, num2, den2) {
   const correct = num1 * num2 + "/" + den1 * den2;
   const simplifiedCorrect = simplifyAnswer(num1 * num2 + "/" + den1 * den2);
 
-  console.log('Correct:', correct)
+  console.log("Correct:", correct);
   console.log("Correct simplified:", simplifiedCorrect);
 
   if (userAnswer === correct || userAnswer === simplifiedCorrect) {
@@ -155,26 +172,24 @@ function showFeedback() {
 
   if (question === 0) {
     feedback.textContent = question1Parts[partNum];
-    sajaBoysImg.src = question1Images[partNum]
-  }
-  else if (question === 1) {
+    sajaBoysImg.src = question1Images[partNum];
+  } else if (question === 1) {
     feedback.textContent = question2Parts[partNum];
-    sajaBoysImg.src = question2Images[partNum]
-  }
-  else if (question === 2){
+    sajaBoysImg.src = question2Images[partNum];
+  } else if (question === 2) {
     feedback.textContent = question3Parts[partNum];
-    sajaBoysImg.src = question3Images[partNum]
+    sajaBoysImg.src = question3Images[partNum];
   }
 }
-function showIncorrect(){
+function showIncorrect() {
   bubbleWrapper.style.display = "none";
   submitContainer.style.display = "none";
 
-  errorContainer.style.display = 'block';
-  errorImage.style.display = 'flex';
-  ribbon.style.display = 'block';
-  ribbonSpan.style.display = 'block';
-  nextContainer.style.display = 'flex';
+  errorContainer.style.display = "block";
+  errorImage.style.display = "flex";
+  ribbon.style.display = "block";
+  ribbonSpan.style.display = "block";
+  nextContainer.style.display = "flex";
 }
 
 function continueOrAdvanceQuestion() {
@@ -187,8 +202,8 @@ function continueOrAdvanceQuestion() {
     partNum = 0;
 
     if (question >= 3) {
-      window.location.href = 'main/SajaBoys_Act_5_1.html';
-      console.log("Go to Alyssa's section!")
+      window.location.href = "main/SajaBoys_Act_5_1.html";
+      console.log("Go to Alyssa's section!");
     }
 
     showQuestionIntro();
@@ -211,7 +226,7 @@ function getGcd(a, b) {
   }
   return a;
 }
-function prettyFunction(num1, den1){
+function prettyFunction(num1, den1) {
   // return '<sup> ${num1} </sup>&frasl;<sub>den2</sub>';
   return `<sup>${num1} </sup>&frasl; <sub> ${den1} </sub>`;
 }
