@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #CE8CC8;
+    background-image: url('./images/dashboard.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #121244;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#navbar a{
+    color: white;
+    text-decoration: none;
+    font-family: work-sans, sans-serif;
+    font-size: 1.5rem;
+}
+ 
+#navbar li{
+    color: white;
+    font-family: work-sans, sans-serif;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    border-radius: 15px;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+main {
+    min-height: calc(100vh - 60px);
+}
