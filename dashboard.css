@@ -50,4 +50,60 @@ header {
 
 main {
     min-height: calc(100vh - 60px);
+    display: flex;
+    position: relative;
+}
+
+.left-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-left: 200px;
+}
+
+.right-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 400px;
+    padding-bottom: 100px;
+}
+
+.huntrix-button {
+    background-color: #d3d3d3;
+    color: #666;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: work-sans, sans-serif;
+    cursor: pointer;
+}
+
+.huntrix-button a {
+    color: #666;
+    text-decoration: none;
+}
+
+.sajaboy-button {
+    background-color: #d3d3d3;
+    color: #666;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: work-sans, sans-serif;
+    cursor: pointer;
+}
+
+.sajaboy-button a {
+    color: #666;
+    text-decoration: none;
 }
