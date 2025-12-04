@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const nextScene = params.get("next");  
 
+    document.addEventListener("keydown", function(event) {
+        if (event.key == "Enter") {
+            event.preventDefault();
+            if (nextBtn) {
+                nextBtn.click();
+            }
+        }
+    }) 
+
     //if (!nextBtn) return;
 
     let correct=null;  // comes back later to store numerator and denominator of correct answer
