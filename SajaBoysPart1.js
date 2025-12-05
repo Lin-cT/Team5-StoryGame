@@ -1,5 +1,9 @@
 const nextContainer = document.getElementById("next-container");
 const nextButton = document.getElementById("next-button");
+const loginButton = document.getElementById("login-button");
+loginButton.addEventListener('click', function(){
+  window.location.href = "login.html"
+});
 
 const submitContainer = document.getElementById("submit-container");
 const submitButton = document.getElementById("submit-button");
@@ -44,7 +48,7 @@ question1Parts = [
   "Hurray! Jinu finished using cleanser! Continue answering problems to complete Jinu's skincare routine.",
   "Yay! Jinu finished exfloiating his skin! Continue answering problems to complete Jinu's skincare routine.",
   "Halfway done! Jinu used toner! Continue answering problems to complete Jinu's skincare routine.",
-  "Almost done! Jinu used expensive acne treatment! Continue answering problems to continue Jinu's skincare routine.",
+  "Almost done! Jinu used an expensive serum treatment! Continue answering problems to continue Jinu's skincare routine.",
   "Finished! Jinu used moisturizer and finished his skincare routine. He's now ready for the day!",
 ];
 question2Parts = [
@@ -94,6 +98,8 @@ function showQuestionIntro() {
   bubbleWrapper.style.display = "none";
   feedbackContainer.style.display = "none";
   submitContainer.style.display = "none";
+  checkContainer.style.display = "none";
+  checkImage.style.display = "none";
 
   promptContainer.style.display = "flex";
   nextContainer.style.display = "flex";
@@ -133,6 +139,8 @@ function createProblem() {
   ribbon.style.display = "none";
   ribbonSpan.style.display = "none";
   nextContainer.style.display = "none";
+  checkContainer.style.display = "none";
+  checkImage.style.display = "none";
 
   bubbleWrapper.style.display = "flex";
   submitContainer.style.display = "flex";
@@ -202,7 +210,7 @@ function continueOrAdvanceQuestion() {
     partNum = 0;
 
     if (question >= 3) {
-      window.location.href = "main/SajaBoys_Act_5_1.html";
+      window.location.href = "SajaBoys_Act_5_1.html";
       console.log("Go to Alyssa's section!");
     }
 
