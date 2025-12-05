@@ -18,67 +18,66 @@
     <main>
       <form id="signup-form">
         <div>
-          <label for="name">Full name</label>
-          <br>
+          <label for="name">Full name</label><br>
           <input id="name" name="name" type="text" required>
         </div>
-
+    
         <br>
         <div>
-          <label for="email">Email</label>
-          <br>
+          <label for="email">Email</label><br>
           <input id="email" name="email" type="email" required>
         </div>
-
+    
         <br>
         <div>
-          <label for="password">Password</label>
-          <br>
+          <label for="password">Password</label><br>
           <input id="password" name="password" type="password" required minlength="8">
         </div>
+    
         <br>
         <div>
-          <label for="confirm">Confirm password</label>
-          <br>
+          <label for="confirm">Confirm password</label><br>
           <input id="confirm" name="confirm" type="password" required minlength="8">
         </div>
-
+    
         <br>
-        <button type="submit">Create account</button>
-
+  
+        <button type="button" id="signup-btn" onclick="handleSignup()">Create account</button>
+    
         <p>Already have an account? <a href="./login.html">Log in</a></p>
       </form>
-
+    
       <div id="image-container">
         <img src="./images/halfsajaboy.png" alt="Sajaboys">
       </div>
-    </main>
+    </main>    
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById('signup-form').addEventListener('submit', function(event) {
-          event.preventDefault(); //prevent page reloading
+      function handleSignup() {
 
-          const email = document.getElementById('email').value;
-
-          // Saving email and starting to collect points
-          localStorage.setItem('isLoggedIn', 'true');
-          localStorage.setItem('userEmail', email);
-
-          // If user has no Huntrix Points, initialize
-          if (!localStorage.getItem('huntrixPoints')) {
-            localStorage.setItem('huntrixPoints', '0')
-          }
-
-          if (!localStorage.getItem('sajaPoints')) {
-            localStorage.setItem('sajaPoints', '0')
-          }
-
-          window.location.href = './dashboard.html'; //Should just redirect to the starting page where users begin their Huntrix or Saja Boys journey
-        });
-      });
-
+        const form = document.getElementById('signup-form');
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+    
+        console.log("Create account clicked"); 
+    
+        const email = document.getElementById('email').value;
+    
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userEmail', email);
+    
+        if (!localStorage.getItem('huntrixPoints')) {
+          localStorage.setItem('huntrixPoints', '0');
+        }
+        if (!localStorage.getItem('sajaPoints')) {
+          localStorage.setItem('sajaPoints', '0');
+        }
+    
+        window.location.href = './dashboard.html';
+      }
     </script>
-
+    
   </body>
 </html>
 

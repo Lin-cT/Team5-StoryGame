@@ -1,46 +1,48 @@
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    font-family: work-sans, sans-serif;
     background-color: #CE8CC8;
 }
+
+/* Navbar */
 
 header {
     width: 100%;
 }
 
-#navbar{
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0 20px;
     background-color: #121244;
-    color: white;
+    color: pink;
     width: 100%;
     box-sizing: border-box;
+    white-space: nowrap;   /* prevents items from wrapping */
 }
 
-#navbar a{
+
+#navbar a {
     color: white;
     text-decoration: none;
-    font-family: work-sans, sans-serif;
     font-size: 1.5rem;
 }
- 
-#navbar li{
-    color: white;
-    font-family: work-sans, sans-serif;
+
+#navbar li {
     list-style: none;
     display: flex;
     gap: 10px;
     border-radius: 15px;
     background-color: black;
     padding: 10px;
-    text-align: center;
     font-size: 0.75rem;
 }
+
+
+/* layout */
 
 main {
     display: flex;
@@ -51,28 +53,44 @@ main {
     padding-top: 60px;
 }
 
-#signup-form{
+/* signup card */
+
+#signup-form {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    height: 100vh;
+    align-items: center;
     background-color: #121244;
-    width: 20%;
-    height: 30%;
+    width: 320px;
     border-radius: 15px;
     padding: 20px;
     margin: 20px;
     color: white;
-    font-family: work-sans, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
+
+    position: relative;
+    z-index: 2;
 }
 
-#image-container{
+#signup-form input {
+    width: 80%;
+}
+
+/* button */
+
+#signup-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+}
+
+/* image */
+
+#image-container {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    z-index: 1;
+    pointer-events: none; /* doesn’t block clicks */
 }
 
 #image-container img {
