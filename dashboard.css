@@ -1,109 +1,119 @@
+
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #CE8CC8;
-    background-image: url('./images/dashboard.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
+    font-family: work-sans, sans-serif;
 }
+
+/* Navbar */
 
 header {
     width: 100%;
 }
 
-#navbar{
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0 20px;
     background-color: #121244;
     color: white;
     width: 100%;
-    box-sizing: border-box;
 }
 
-#navbar a{
+#navbar a {
     color: white;
     text-decoration: none;
-    font-family: work-sans, sans-serif;
     font-size: 1.5rem;
 }
- 
-#navbar li{
-    color: white;
-    font-family: work-sans, sans-serif;
+
+#navbar li {
     list-style: none;
     display: flex;
     gap: 10px;
     border-radius: 15px;
     background-color: black;
     padding: 10px;
-    text-align: center;
     font-size: 0.75rem;
 }
+
+/* MAIN LAYOUT */
 
 main {
     min-height: calc(100vh - 60px);
     display: flex;
-    position: relative;
+
+    /* fallback */
+    background-color: #E561A5;
+
+    /* 🔹 IMAGE ON TOP, GRADIENT UNDERNEATH */
+    background-image:
+        url('./images/dashboard.png'),
+        linear-gradient(to right, #E561A5 0%, #E561A5 49.9%, #80B4D5 50.1%, #80B4D5 100%);
+
+
+    background-size:
+        contain,     /* dashboard.png */
+        100% 100%;   /* gradient fills whole area */
+    
+    background-position:
+        center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
 }
 
-.left-section {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 80px;
-    padding-left: 200px;
+
+/* Optional divider (you’re not really using it) */
+.divider {
+    width: 0;
 }
 
+/* Left + right sections just hold buttons now */
+/* Left + right sections just hold buttons now */
+.left-section,
 .right-section {
     flex: 1;
-    position: relative;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-right: 400px;
-    padding-bottom: 100px;
+    justify-content: center;  /* center horizontally */
 }
 
-.huntrix-button {
-    background-color: #d3d3d3;
-    color: #666;
-    border: none;
-    border-radius: 15px;
-    padding: 12px 30px;
-    text-align: center;
-    font-size: 1rem;
-    font-family: work-sans, sans-serif;
-    cursor: pointer;
+/* Huntrix button: higher up */
+.left-section {
+    align-items: flex-start;  /* stick to top */
+    padding-top: 8vh;         /* adjust this to move it up/down */
 }
 
-.huntrix-button a {
-    color: #666;
-    text-decoration: none;
+/* Saja Boys button: lower down */
+.right-section {
+    align-items: flex-end;    /* stick to bottom */
+    padding-bottom: 8vh;      /* adjust this to move it up/down */
 }
 
+
+/* Buttons */
+
+.huntrix-button,
 .sajaboy-button {
     background-color: #d3d3d3;
     color: #666;
     border: none;
     border-radius: 15px;
-    padding: 12px 30px;
+    padding: 20px 40px;
     text-align: center;
     font-size: 1rem;
-    font-family: work-sans, sans-serif;
     cursor: pointer;
 }
 
+.huntrix-button a,
 .sajaboy-button a {
     color: #666;
     text-decoration: none;
 }
+
+
+
