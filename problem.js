@@ -86,6 +86,14 @@ next_btn.addEventListener('click', function (e) {
   }
   });
 
+  document.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+        if (next_btn) {
+            next_btn.click();
+        }
+    }
+  }) 
   
   
   

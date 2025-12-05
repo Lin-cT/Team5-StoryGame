@@ -39,6 +39,15 @@ window.onload = startGame;
 nextButton.addEventListener("click", handleNext);
 submitButton.addEventListener("click", handleSubmit);
 
+userAnswerInput.addEventListener("keydown", function(events) {
+  if (events.key == "Enter") {
+    events.preventDefault();
+    if (handleSubmit) {
+      handleSubmit(); // This should fix the enter issue?
+    }
+  }
+})
+
 questions = [
   "It is a brand new day, and Jinu has just woken up! Jinu would like to start off the day with doing his skincare routine to keep his flawless skin perfect. Help Jinu with his skincare! Solve the problems to complete Jinu's skincare routine!",
   "After getting ready, Jinu meets up with the rest of the Saja Boys for breakfast. Today, it’s Mystery Saja’s turn to cook breakfast for everybody. Help Mystery Saja make scrambled eggs!",
