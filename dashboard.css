@@ -21,7 +21,10 @@ header {
     background-color: #121244;
     color: white;
     width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;   /* prevents items from wrapping */
 }
+
 
 #navbar a {
     color: white;
