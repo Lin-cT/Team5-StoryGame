@@ -53,6 +53,31 @@
         <img src="./images/halfsajaboy.png" alt="Sajaboys">
       </div>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+          event.preventDefault(); //prevent page reloading
+
+          const email = document.getElementById('email').value;
+
+          // Saving email and starting to collect points
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('userEmail', email);
+
+          // If user has no Huntrix Points, initialize
+          if (!localStorage.getItem('huntrixPoints')) {
+            localStorage.setItem('huntrixPoints', '0')
+          }
+
+          if (!localStorage.getItem('sajaPoints')) {
+            localStorage.setItem('sajaPoints', '0')
+          }
+
+          window.location.href = './daahboard.html'; //Should just redirect to the starting page where users begin their Huntrix or Saja Boys journey
+        });
+      });
+
+    </script>
 
   </body>
 </html>
