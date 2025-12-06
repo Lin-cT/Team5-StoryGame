@@ -6,8 +6,6 @@ body {
     background-color: #CE8CC8;
 }
 
-/* Navbar */
-
 header {
     width: 100%;
 }
@@ -21,7 +19,7 @@ header {
     color: pink;
     width: 100%;
     box-sizing: border-box;
-    white-space: nowrap;   /* prevents items from wrapping */
+    white-space: nowrap;   
 }
 
 
@@ -41,9 +39,6 @@ header {
     font-size: 0.75rem;
 }
 
-
-/* layout */
-
 main {
     display: flex;
     justify-content: center;
@@ -52,8 +47,6 @@ main {
     position: relative;
     padding-top: 60px;
 }
-
-/* signup card */
 
 #signup-form {
     display: flex;
@@ -76,21 +69,18 @@ main {
     width: 80%;
 }
 
-/* button */
-
 #signup-btn {
     margin-top: 10px;
     padding: 6px 12px;
 }
 
-/* image */
 
 #image-container {
     position: absolute;
     bottom: 20px;
     left: 20px;
     z-index: 1;
-    pointer-events: none; /* doesn’t block clicks */
+    pointer-events: none; 
 }
 
 #image-container img {
