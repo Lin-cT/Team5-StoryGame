@@ -133,4 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("huntrixPoints", current.toString());
     }
 
+    document.getElementById("btnlogin").addEventListener("click", function () {
+        window.location.href = "login.html";
+      });
+
 });
