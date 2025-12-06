@@ -51,7 +51,8 @@ body {
     align-items:center;   
     justify-content:center; 
     gap:-10px;  
-    width:auto;     
+    width:auto;
+    white-space: nowrap;     
 }
 .row-left { 
     margin-right: 30%; /*moves top bubble to the left when increased*/
